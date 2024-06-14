@@ -1,21 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './TodoFilter.css';
 
-function TodoFilter(){
-  const [filterValue, setFilterValue] = React.useState();
-  useState('');
+function TodoFilter({
+    filterValue,
+    setFilterValue,
+}) {
 
-  console.log('Los Usuarios buscan to do de '+ filterValue );
-
-    return(
-      <input className="TodoFilter" 
-      placeholder="Buscar To Do"
+  return (
+    <>
+    <input
+      placeholder="Filter a To Do "
+      className="TodoFilter"
       value={filterValue}
-      onChange={(event)=>{
+      onChange={(event) => {
         setFilterValue(event.target.value);
       }}
-      />
-    );
+    />
+    </>
+  );
 }
 
-export {TodoFilter};
+export { TodoFilter };
